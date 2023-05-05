@@ -383,7 +383,7 @@ public class ThirdAppWechatEnterpriseServiceImpl implements IThirdAppService {
             return syncInfo;
         }
         // 获取企业微信所有的用户
-        List<User> qwUsersList = JwUserAPI.getDetailUsersByDepartid("1", null, null, accessToken);
+        List<User> qwUsersList = JwUserAPI.getUserIdList(accessToken);
         if (qwUsersList == null) {
             syncInfo.addFailInfo("企业微信用户列表查询失败！");
             return syncInfo;
@@ -398,8 +398,8 @@ public class ThirdAppWechatEnterpriseServiceImpl implements IThirdAppService {
              * 2. 本地表里没有，就先用手机号判断，不通过再用username判断。
              */
             SysThirdAccount sysThirdAccount = sysThirdAccountService.getOneByThirdUserId(qwUser.getUserid(), THIRD_TYPE);
-            List<SysUser> collect = sysUsersList.stream().filter(user -> (qwUser.getMobile().equals(user.getPhone()) || qwUser.getUserid().equals(user.getUsername()))
-                                                                ).collect(Collectors.toList());
+            List<SysUser> collect = sysUsersList.stream().filter(user -> (qwUser.getUserid().equals(user.getUsername()))
+            ).collect(Collectors.toList());
 
             if (collect != null && collect.size() > 0) {
                 SysUser sysUserTemp = collect.get(0);
