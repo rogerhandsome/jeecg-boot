@@ -17,17 +17,17 @@ import javax.annotation.Resource;
 @Slf4j
 public class SyncUserJob implements Job {
 
-	@Resource
-	ThirdAppWechatEnterpriseServiceImpl wechatEnterpriseService;
+    @Resource
+    ThirdAppWechatEnterpriseServiceImpl wechatEnterpriseService;
 
-	@Override
-	public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-		log.info(" Job Execution key：" + jobExecutionContext.getJobDetail().getKey());
-		SyncInfoVo syncInfoVo = wechatEnterpriseService.syncThirdAppUserToLocal();
-		if (syncInfoVo.getFailInfo().size() == 0) {
-			log.info("同步成功");
-		} else {
-			log.info("同步失败");
-		}
-	}
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        log.info(" Job Execution key：" + jobExecutionContext.getJobDetail().getKey());
+        SyncInfoVo syncInfoVo = wechatEnterpriseService.syncThirdAppUserToLocal();
+        if (syncInfoVo.getFailInfo().size() == 0) {
+            log.info("同步成功:{}", syncInfoVo);
+        } else {
+            log.info("同步失败:{}", syncInfoVo);
+        }
+    }
 }
