@@ -9,3 +9,5 @@ rebel.xml
 
 ## front
 **/*.lock
+/hs_err_pid37096.log
+/hs_err_pid46656.log
