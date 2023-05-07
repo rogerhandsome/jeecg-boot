@@ -168,7 +168,7 @@ minidao:
   base-package: org.jeecg.modules.jmreport.*
 jeecg:
   # 是否启用安全模式
-  safeMode: false
+  safeMode: true
   # 签名密钥串(前后端要一致，正式发布请自行修改)
   signatureSecret: dd05f1c54d63749eda95f9fa6d49v442a
   # 签名拦截接口
@@ -188,8 +188,8 @@ jeecg:
     excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,/category/**,/visual/**,/map/**,/jmreport/bigscreen2/**
   #阿里云oss存储和大鱼短信秘钥配置
   oss:
-    accessKey: ??
-    secretKey: ??
+    accessKey: LTAI5tRYoruuDuVyWYTYXTiZ
+    secretKey: 2C0TmwZQhXCKJjX3e6J6HQJzGLZJgX
     endpoint: oss-cn-beijing.aliyuncs.com
     bucketName: jeecgdev
   # ElasticSearch 6设置
@@ -237,9 +237,9 @@ logging:
 #swagger
 knife4j:
   #开启增强配置
-  enable: true
+  enable: false
   #开启生产环境屏蔽
-  production: false
+  production: true
   basic:
     enable: false
     username: jeecg
@@ -253,10 +253,10 @@ justauth:
       client-secret: ??
       redirect-uri: http://sso.test.com:8080/jeecg-boot/sys/thirdLogin/github/callback
     WECHAT_ENTERPRISE:
-      client-id: ??
-      client-secret: ??
-      redirect-uri: http://sso.test.com:8080/jeecg-boot/sys/thirdLogin/wechat_enterprise/callback
-      agent-id: ??
+      client-id: wwf890632781e15b67
+      client-secret: 6nteAyUea1JHl8Ht3NRCUsq_EE2C0q65BdWgm_vlr7k
+      redirect-uri: http://47.106.214.33/jeecgboot/sys/thirdLogin/wechat_enterprise/callback
+      agent-id: 1000002
     DINGTALK:
       client-id: ??
       client-secret: ??
@@ -266,7 +266,7 @@ justauth:
       client-secret: ??
       redirect-uri: http://sso.test.com:8080/jeecg-boot/sys/thirdLogin/wechat_open/callback
   cache:
-    type: default
+    type: REDIS
     prefix: 'demo::'
     timeout: 1h
 #第三方APP对接

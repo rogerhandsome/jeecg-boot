@@ -19,7 +19,6 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
@@ -66,6 +65,7 @@ public class Swagger2Config implements WebMvcConfigurer {
     public Docket defaultApi2() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
+                .enable(false)
                 .select()
                 //此包路径下的类，才生成接口文档
                 .apis(RequestHandlerSelectors.basePackage("org.jeecg"))
