@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.jeecg.common.system.base.entity.JeecgEntity;
 
+import java.math.BigDecimal;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
@@ -19,5 +21,7 @@ public class CustomerDetailsEntity extends JeecgEntity {
     private String taxType;
     private String renewalTime;
     private String mobile;
+    private BigDecimal contactAmt;
+    private String cusState;
 
 }

@@ -19,7 +19,7 @@ public class DeclarationDetailsEntity extends JeecgEntity {
     private String state;
     private String declarationDate;
     private String declarationMethod;
-    private Integer declarationMonth;
+    private String declarationMonth;
     private String taxType;
 
 }
